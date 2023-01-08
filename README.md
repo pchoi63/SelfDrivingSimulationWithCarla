@@ -18,13 +18,11 @@ Traffic light detection was used for vehicles to react to the different colors o
 
 Speed sign classification was implemented to change the values given to the vehicle’s throttle. This process has three steps, Hough circle detection, template matching, and SVM Grid Search. Like traffic light detection, I first look for any circles in each frame. Once a circle is detected, I crop out the frame image to the exact size of the speed sign by the diameter of the circle.  This allows the process to focus on the circle itself. Then I take the cropped-out image then compare the templates of 30 MPH, 60 MPH, and 90 MPH to find the correlation coefficient, a pixel-by-pixel comparison between the template and the region. If the correlation is greater than the threshold and decides whether the circle detected is even a speed sign. Once I decide that it is a speed sign, I use Support Vector Machine to classify the sign between 30 MPH, 60 MPH, or 90 MPH. SVM is a linear model for classification and regression problems as it is suitable for practical image classification. It solves both linear and non-linear problems. The idea is to create a line or a hyperplane that separates the data into classes. 
 
-
-<img width="569" alt="Screen Shot 2023-01-09 at 12 13 47 AM" src="https://user-images.githubusercontent.com/110645615/211204162-19dd1b6f-43c9-42ce-a5d8-98bdfbd6c00d.png">
-
 <img width="569" alt="Screen Shot 2023-01-09 at 12 08 57 AM" src="https://user-images.githubusercontent.com/110645615/211204163-755eb25a-66a5-4b22-890d-eaab5bf9d5be.png">
 
 <img width="572" alt="Screen Shot 2023-01-09 at 12 09 16 AM" src="https://user-images.githubusercontent.com/110645615/211204152-e5a452a5-e32f-4bdb-bca7-5f56df4af71f.png">
 
+<img width="569" alt="Screen Shot 2023-01-09 at 12 13 47 AM" src="https://user-images.githubusercontent.com/110645615/211204162-19dd1b6f-43c9-42ce-a5d8-98bdfbd6c00d.png">
 
 As mentioned earlier, vehicles in Carla have three functions for their control. The vehicle is in closed-loop control meaning it works in real-time operation in simulation time. The values of each function, steer, throttle, the brake is given based on my predictions from lane detection, traffic light detection, and speed sign classification. For example, the controller tries to match the center point of the dashcam to the center point of the lane. It provides a sharper steer if the distance between the two center points is greater than a threshold. For speed sign detection, I give a smaller value to the throttle if 30 MPH is detected and higher if others are detected.
 
