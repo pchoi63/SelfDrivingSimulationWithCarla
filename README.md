@@ -1,6 +1,6 @@
 # Self Driving Simulation With Carla
-![maxresdefault](https://user-images.githubusercontent.com/110645615/211204387-46b72f02-48c5-4028-b765-6fd86f8dd464.jpg)
 As many automobile companies have released self-driving vehicles in the market, the research for autonomous driving has grown exponentially grown over the decade. Even though those self-driving cars already have a big impact on our lives, there are areas where the vehicles struggle, in other words, do not perform well which can lead to a serious issue since it is responsible for human life.
+![maxresdefault](https://user-images.githubusercontent.com/110645615/211204387-46b72f02-48c5-4028-b765-6fd86f8dd464.jpg)
 
 For my senior research at Connecticut College, I wanted to explore the computer vision side of self-driving vehicles using Carla, CAR Learning to Act. Carla is an open-source autonomous driving simulator powered by Unreal Engine which can be found in high-graphic gaming in today’s world. It was developed to support the training and validation of the autonomous driving system. This makes Carla efficient in terms of time, cost, and safety by testing algorithms in the simulator rather than testing on a real-life car. This process helps eliminate the errors of a self-driving system which can end up in an accident. Carla also provides various environmental conditions such as weather, map, etc. which allows users to explore all the different situations a vehicle might face in real life.
 
