@@ -1,8 +1,6 @@
-# SelfDrivingSimulationWithCarla
+# Self Driving Simulation With Carla
 
-Self-Driving Simulation with Computer Vision and Carla
-
-	As many automobile companies have released self-driving vehicles in the market, the research for autonomous driving has grown exponentially grown over the decade. Even though those self-driving cars already have a big impact on our lives, there are areas where the vehicles struggle, in other words, do not perform well which can lead to a serious issue since it is responsible for human life.
+As many automobile companies have released self-driving vehicles in the market, the research for autonomous driving has grown exponentially grown over the decade. Even though those self-driving cars already have a big impact on our lives, there are areas where the vehicles struggle, in other words, do not perform well which can lead to a serious issue since it is responsible for human life.
 
 For my senior research at Connecticut College, I wanted to explore the computer vision side of self-driving vehicles using Carla, CAR Learning to Act. Carla is an open-source autonomous driving simulator powered by Unreal Engine which can be found in high-graphic gaming in today’s world. It was developed to support the training and validation of the autonomous driving system. This makes Carla efficient in terms of time, cost, and safety by testing algorithms in the simulator rather than testing on a real-life car. This process helps eliminate the errors of a self-driving system which can end up in an accident. Carla also provides various environmental conditions such as weather, map, etc. which allows users to explore all the different situations a vehicle might face in real life.
 
@@ -36,10 +34,16 @@ Future work involves:
 Reference
 
 “Carla Settings.” CARLA Settings - CARLA Simulator, https://carla.readthedocs.io/en/stable/carla_settings/. 
-Am. “120 Dog Breeds - Classification.” Kaggle, 20 Apr. 2022, https://www.kaggle.com/datasets/66c1d9bf5dc19d7b625c8dc2ab926fdfba7a66b7ccaac60cf70f8fa480f086ae. 
+Am. “120 Dog Breeds - Classification.” Kaggle, 20 Apr. 2022, https://www.kaggle.com/datasets/66c1d9bf5dc19d7b625c8dc2ab926fdfba7a66b7ccaac60cf70f8fa480f086ae.
+
 “3.3. Scikit-Image: Image Processing¶.” 3.3. Scikit-Image: Image Processing - Scipy Lecture Notes, http://scipy-lectures.org/packages/scikit-image/. 
+
 “1.4. Support Vector Machines.” Scikit, https://scikit-learn.org/stable/modules/svm.html. 
+
 “Sklearn.model_selection.GRIDSEARCHCV.” Scikit, https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html. 
+
 “Generate Maps with OpenStreetMap.” Generate Maps with OpenStreetMap - CARLA Simulator, https://carla.readthedocs.io/en/latest/tuto_G_openstreetmap/. 
+
 “[CAVH] Carla Simulation Project.” CAVH Research Group, https://cavh.cee.wisc.edu/carla-simulation-project/. 
+
 angelkim88. “Angelkim88/Carla-lane_detection.” GitHub, https://github.com/angelkim88/CARLA-Lane_Detection. 
