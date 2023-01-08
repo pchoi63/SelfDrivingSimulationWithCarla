@@ -1,8 +1,12 @@
 # Self Driving Simulation With Carla
 
+
+
 As many automobile companies have released self-driving vehicles in the market, the research for autonomous driving has grown exponentially grown over the decade. Even though those self-driving cars already have a big impact on our lives, there are areas where the vehicles struggle, in other words, do not perform well which can lead to a serious issue since it is responsible for human life.
 
 For my senior research at Connecticut College, I wanted to explore the computer vision side of self-driving vehicles using Carla, CAR Learning to Act. Carla is an open-source autonomous driving simulator powered by Unreal Engine which can be found in high-graphic gaming in today’s world. It was developed to support the training and validation of the autonomous driving system. This makes Carla efficient in terms of time, cost, and safety by testing algorithms in the simulator rather than testing on a real-life car. This process helps eliminate the errors of a self-driving system which can end up in an accident. Carla also provides various environmental conditions such as weather, map, etc. which allows users to explore all the different situations a vehicle might face in real life.
+
+<img width="1481" alt="Screen Shot 2023-01-09 at 12 11 22 AM" src="https://user-images.githubusercontent.com/110645615/211204158-77f6e337-7423-4c12-91f5-06dad2b6c4a8.png">
 
 Carla has features that allow vehicles in simulation to work similarly to real cars. Features such as cameras, control, and sensors are the main features I will be using in this research. The camera in Carla is free of positioning meaning multiple cameras can be attached anywhere in the car. For example, a dashcam camera and a rear-view camera can work synchronously. Control of the vehicle has three functions, throttle, steer and break where each function can be given any numeric value to make changes in its control. Lastly, sensors in Carla provide ground truth such as collisions with objects or lanes and location. This feature was only used to validate my predictions and was not used to control the vehicle.
 
@@ -12,7 +16,17 @@ To keep the vehicle in the center of the road, lane detection was implemented. H
 
 Traffic light detection was used for vehicles to react to the different colors of lights, green and red. To detect the circles in the traffic lights, I once again used the Hough transform which is a placeholder for now as other objects may have similar look to it. For example, red lights on a back of a vehicle or even a fire hydrant can be detected as traffic lights. Once the circle is detected, I check its HSV, Hue Saturation Value, to determine whether it is green or red and control the vehicle. If red, I give values to break. If green, I give values to throttle to get it moving.
 
+<img width="380" alt="Screen Shot 2023-01-09 at 12 08 28 AM" src="https://user-images.githubusercontent.com/110645615/211204155-c8709ac1-ee26-448c-bf4f-e3944ea6da8c.png">
+
 Speed sign classification was implemented to change the values given to the vehicle’s throttle. This process has three steps, Hough circle detection, template matching, and SVM Grid Search. Like traffic light detection, I first look for any circles in each frame. Once a circle is detected, I crop out the frame image to the exact size of the speed sign by the diameter of the circle.  This allows the process to focus on the circle itself. Then I take the cropped-out image then compare the templates of 30 MPH, 60 MPH, and 90 MPH to find the correlation coefficient, a pixel-by-pixel comparison between the template and the region. If the correlation is greater than the threshold and decides whether the circle detected is even a speed sign. Once I decide that it is a speed sign, I use Support Vector Machine to classify the sign between 30 MPH, 60 MPH, or 90 MPH. SVM is a linear model for classification and regression problems as it is suitable for practical image classification. It solves both linear and non-linear problems. The idea is to create a line or a hyperplane that separates the data into classes. 
+
+
+<img width="569" alt="Screen Shot 2023-01-09 at 12 13 47 AM" src="https://user-images.githubusercontent.com/110645615/211204162-19dd1b6f-43c9-42ce-a5d8-98bdfbd6c00d.png">
+
+<img width="569" alt="Screen Shot 2023-01-09 at 12 08 57 AM" src="https://user-images.githubusercontent.com/110645615/211204163-755eb25a-66a5-4b22-890d-eaab5bf9d5be.png">
+
+<img width="572" alt="Screen Shot 2023-01-09 at 12 09 16 AM" src="https://user-images.githubusercontent.com/110645615/211204152-e5a452a5-e32f-4bdb-bca7-5f56df4af71f.png">
+
 
 As mentioned earlier, vehicles in Carla have three functions for their control. The vehicle is in closed-loop control meaning it works in real-time operation in simulation time. The values of each function, steer, throttle, the brake is given based on my predictions from lane detection, traffic light detection, and speed sign classification. For example, the controller tries to match the center point of the dashcam to the center point of the lane. It provides a sharper steer if the distance between the two center points is greater than a threshold. For speed sign detection, I give a smaller value to the throttle if 30 MPH is detected and higher if others are detected.
 
