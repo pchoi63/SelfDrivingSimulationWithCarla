@@ -1,0 +1,10 @@
+Bike
+Motobike
+Person
+Green Light
+Orange Light
+Red Light
+Speed Limit 30
+Speed Limit 60
+Speed Limit 90
+Vehicle
