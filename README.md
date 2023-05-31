@@ -28,12 +28,12 @@ When YOLO detects one of the objects in the class list, it can draw a box around
 ### Traffic Light Detection
 <img width="1340" alt="Screen Shot 2023-05-31 at 6 07 25 PM" src="https://github.com/pchoi63/SelfDrivingSimulationWithCarla/assets/110645615/a35028b7-6837-4804-b2a9-117053b88525">
 
-### Speed Sign
+### Speed Sign Detection
 <img width="1340" alt="Screen Shot 2023-05-31 at 6 07 50 PM" src="https://github.com/pchoi63/SelfDrivingSimulationWithCarla/assets/110645615/d0904f7b-dd3d-4945-9ff3-ef89c160f94d">
 
 ## Data Set
 My data set consists of 1.6k training-labeled images imported from Roboflow. The model was developed using YOLO v5s which had the perfect balance of what I needed regarding speed and accuracy. It was trained with 32 batches and 120 epochs, including nine classes:
-
+### Classes
 1. Red light
 2. Yellow light
 3. Green light,
@@ -52,10 +52,6 @@ My data set consists of 1.6k training-labeled images imported from Roboflow. The
 3. When the red light is detected, it can completely stop without violating the law.
 4. When the green light is detected, it cruises through or accelerates out of the brake coming
 from red to green.
-
-## Speed Sign Classification
-
-
 
 ## Result
 The accuracy was tested under four conditions. The purpose of testing in different
@@ -84,11 +80,18 @@ Foggy Evening
 ## Reference
 “Carla Settings.” CARLA Settings - CARLA Simulator, https://carla.readthedocs.io/en/stable/carla_settings/.
 Am. “120 Dog Breeds - Classification.” Kaggle, 20 Apr. 2022, https://www.kaggle.com/datasets/66c1d9bf5dc19d7b625c8dc2ab926fdfba7a66b7ccaac60c f70f8fa480f086ae.
+
 “3.3. Scikit-Image: Image Processing¶.” 3.3. Scikit-Image: Image Processing - Scipy Lecture Notes, http://scipy-lectures.org/packages/scikit-image/.
+
 “1.4. Support Vector Machines.” Scikit, https://scikit-learn.org/stable/modules/svm.html. “Sklearn.model_selection.GRIDSEARCHCV.” Scikit, https://scikit-
-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV .html. “Generate Maps with OpenStreetMap.” Generate Maps with OpenStreetMap - CARLA
+learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV. 
+
+“Generate Maps with OpenStreetMap.” Generate Maps with OpenStreetMap - CARLA
 Simulator, https://carla.readthedocs.io/en/latest/tuto_G_openstreetmap/.
+
 “[CAVH] Carla Simulation Project.” CAVH Research Group, https://cavh.cee.wisc.edu/carla-
 simulation-project/.
+
 “Carla Object Detection Dataset by Alec.Hantson@student.Howest.Be.” Roboflow, universe.roboflow.com/alec-hantson-student-howest-be/carla-izloa. Accessed 14 May 2023.
+
 Ultralytics. “Ultralytics/Yolov5: Yolov5 🚀 in PyTorch > ONNX > CoreML > TFLite.” GitHub, github.com/ultralytics/yolov5. Accessed 14 May 2023.
