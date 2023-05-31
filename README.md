@@ -56,18 +56,20 @@ from red to green.
 ## Result
 The accuracy was tested under four conditions. The purpose of testing in different
 conditions is to test how well the model will adjust or react to lightning and fog. 158 images were tested for each condition as Point A to Point B in Town 02 provided the same number of frames. This allowed me to test with consistent images while monitoring the predictions of each.
-Accuracy includes: 
+
+Accuracy includes:
+
 Clear Sunset
-• 132 / 158 (83.5%) 
+- 132 / 158 (83.5%) 
 
 Clear Evening
-• 130 / 158 (82.2%) 
+- 130 / 158 (82.2%) 
 
 Foggy Sunset
-• 128 / 158 (81%) 
+- 128 / 158 (81%) 
 
 Foggy Evening
-• 124 / 158 (78.5%)
+- 124 / 158 (78.5%)
 
 
 ## Future work
